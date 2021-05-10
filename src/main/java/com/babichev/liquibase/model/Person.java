@@ -15,6 +15,9 @@ public class Person {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "surname")
+    private String surname;
+
     @Column(name="height")
     private String height;
 
@@ -30,6 +33,13 @@ public class Person {
 
     public Person(String name, String height, String address) {
         this.name = name;
+        this.height = height;
+        this.address = address;
+    }
+
+    public Person(String name, String surname, String height, String address) {
+        this.name = name;
+        this.surname = surname;
         this.height = height;
         this.address = address;
     }
@@ -58,11 +68,20 @@ public class Person {
         this.address = address;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 ", height='" + height + '\'' +
                 ", address='" + address + '\'' +
                 '}';

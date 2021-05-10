@@ -17,9 +17,9 @@ public class TestController {
 
     @PostMapping(value = "/person")
     @ResponseBody
-    public String createPerson(@RequestParam String name) {
-        Person save = personRepository.save(new Person(name, "3.14"));
-        return save.toString() + "was saved successfully";
+    public String createPerson(@RequestParam String name, @RequestParam String surname) {
+        Person save = personRepository.save(new Person(name, surname, "unknown", "unknown"));
+        return save + "was saved successfully";
     }
 
     @GetMapping(value = "/person")

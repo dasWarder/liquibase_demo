@@ -4,6 +4,10 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <include  file="db/changelog/changelog-1.0.xml"/>
-    <include  file="db/changelog/changelog-2.0.xml"/>
+
+    <changeSet  author="babichev"  id="changelog-2.0">
+        <addColumn tableName="person" schemaName="public">
+            <column name="surname" type="varchar(50)"></column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
